@@ -1,0 +1,77 @@
+1-) girilen ilk parametre çerçevenin sol iki köşesine koyulacak char değeri içindir.
+2-) ikinci parametre çerçevenin üst ve alt kenarının göbek kısmına koyulacak char değeri içindir.
+3-) üçüncü parametre çerçevenin sağ iki köşesine koyulacak char değeri içindir.
+4-) dördüncü parametre çercevenin sağ ve sol kenarının göbek kısmına koyulacak char değeri içindir.
+5-) beşinci parametre çerçevenin yatay uzunluğunu belirleyen bir int değeridir.
+6-) altımcı parametre çerçevenin dikey uzunluğunu belirleyen bir int değeridir.
+
+Fonksiyonun kendisi şu şekildedir:
+
+
+
+
+
+#include <stdio.h>
+
+void    cokfonklucerceve(char ilk, char orta, char son,char dikleme, int x, int y)
+{
+    int i = 0;
+    int j = 0;
+    if (x > 0 && y > 0)
+    {
+        printf("%c", ilk);
+        while(x-2 > i)
+        {
+            printf("%c", orta);
+            i++;
+        }
+        if (y > 1)
+        {
+            printf("%c", son);
+        }
+        printf("\n");
+        while(y-2 > j)
+        {
+            i = 0;
+            printf("%c", dikleme);
+            while (x-2 > i)
+            {
+                printf(" ");
+                i++;
+            }
+            printf("%c\n", dikleme);
+            j++;
+        }
+        i = 0;
+        if (y > 1)
+        {
+            printf("%c", ilk);
+            while(x-2 > i)
+            {
+                printf("%c", orta);
+                i++;
+            }
+            printf("%c", son);
+        }
+    }
+}
+
+bir main örneği:
+
+
+
+
+
+int main() 
+{
+    cokfonklucerceve('o', '-', '1', '|',5,4);
+}
+
+ve çıktısı;
+
+
+
+o---1
+|   |
+|   |
+o---1
